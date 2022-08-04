@@ -1,8 +1,36 @@
 public class Arithmetic {
-    int three = 3;
-    int four = 4;
+    private int bread;
+    private int milk;
+    private int breadPlusMilk = 0;
+    private int breadMultiplyMilk = 0;
 
-    public static void main(String[] args) {
+    public Arithmetic(int priceBread, int priceMilk) {
+        bread = priceBread;
+        milk = priceMilk;
+    }
+    public int getTotalPrice() {
+        breadPlusMilk = bread + milk;
+        return breadPlusMilk;
+    }
+
+    public int getMultiplyPrice() {
+        breadMultiplyMilk = bread * milk;
+        return breadMultiplyMilk;
+    }
+
+    public int getMaxPriceMilk() {
+        if (milk >= bread) {
+            return milk;
+        } else {
+            return bread;
+        }
+    }
+
+    public int getMaxPriceBread() {
+        if (milk <= bread) {
+            return milk;
+        } else {
+            return bread;
+        }
     }
 }
-
