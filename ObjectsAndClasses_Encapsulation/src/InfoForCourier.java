@@ -72,5 +72,12 @@ public class InfoForCourier {
     public boolean isFragilie() {
         return fragilie;
     }
-
+    public String toString(){
+        return "Объем товара в кв. м. : " + dimensions.getDimensions() + "\n"
+                + "Вес товара: " + getWeigth() + "\n"
+                + "Адрес доставки: " + getAddress() + "\n"
+                + "Можно ли переворачивать: " + isFlip() + "\n"
+                + "Номер регистрации: " + getNumberRegistration() + "\n"
+                + "Является ли хрупким: " + isFragilie() + "\n";
+    }
 }
