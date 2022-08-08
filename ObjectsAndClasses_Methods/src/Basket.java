@@ -39,7 +39,7 @@ public class Basket {
         add(name, price, 1, 0);
     }
     public void add(String name, int price, int count, double weight) {
-        totalWeight = totalWeight + weight;
+        totalWeight = totalWeight + weight * count;
         boolean error = false;
         if (contains(name)) {
             error = true;
