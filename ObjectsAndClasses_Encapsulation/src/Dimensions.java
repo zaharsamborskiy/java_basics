@@ -31,7 +31,8 @@ public class Dimensions {
         return length;
     }
     public String toString() {
-        return "Высота товара в м. : " + heigth + "\n" +
+        return  "Объем товара в кв. м. : " + getDimensions() + "\n" +
+                "Высота товара в м. : " + heigth + "\n" +
                 "Ширина товара в м. : " + wigth + "\n" +
                 "Длина товара в м. : " + length + "\n";
     }
