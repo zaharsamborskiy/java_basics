@@ -6,6 +6,14 @@ public class Basket {
     private int limit;
     private double totalWeight = 0;
 
+
+    public static int totalProductCount;
+    public static int totalProductCost;
+    private static int averageProductCost;
+    private static int averageCountBasket;
+
+
+
     public Basket() {
         increaseCount(1);
         items = "Список товаров:";
@@ -39,7 +47,6 @@ public class Basket {
         add(name, price, 1, 0);
     }
     public void add(String name, int price, int count, double weight) {
-        totalWeight = totalWeight + weight * count;
         boolean error = false;
         if (contains(name)) {
             error = true;
@@ -56,19 +63,33 @@ public class Basket {
 
         items = items + "\n" + name + " - " +
                 count + " шт. - " + price + " руб. " + " Вес товара составляет : " + weight;
+
         totalPrice = totalPrice + count * price;
+        totalWeight = totalWeight + weight * count;
+        Basket.totalProductCount = Basket.totalProductCount + count;
+        Basket.totalProductCost = Basket.totalProductCost + totalPrice;
+    }
+
+    public int getTotalProductCount() {
+        return totalProductCount;
+    }
+    public int getTotalProductCost() {
+        return totalProductCost;
+    }
+    public static int getAverageProductCost() {
+        return averageProductCost = Basket.totalProductCost / Basket.totalProductCount;
+    }
+    public static int getAverageCountBasket() {
+        return averageCountBasket = Basket.totalProductCost / getCount();
     }
 
     public void clear() {
         items = "";
         totalPrice = 0;
     }
+
     public double getTotalWeight(){
         return totalWeight;
-    }
-
-    public int getTotalPrice() {
-        return totalPrice;
     }
 
     public boolean contains(String name) {
