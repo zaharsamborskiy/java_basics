@@ -2,13 +2,13 @@ public class Computer {
 
     public final String vendor;
     public final String name;
-    private final Cpu cpu;
-    private final Ram ram;
-    private final InformationAccumulator informationAccumulator;
-    private final Monitor monitor;
-    private final Keyboard keyboard;
+    public Cpu cpu;
+    public Ram ram;
+    public InformationAccumulator informationAccumulator;
+    public Monitor monitor;
+    public Keyboard keyboard;
 
-    public static double totalWeight;
+    public static double totalWeight = 0;
 
     public Computer(String vendor, String name,Cpu cpu, Ram ram, InformationAccumulator informationAccumulator, Monitor monitor,Keyboard keyboard) {
         this.vendor = vendor;
@@ -18,29 +18,39 @@ public class Computer {
         this.informationAccumulator = informationAccumulator;
         this.monitor = monitor;
         this.keyboard = keyboard;
-        totalWeight = cpu.getWeight() + ram.getWeight() + informationAccumulator.getWeight() + monitor.getWeight() + keyboard.getWeight();
+        totalWeight = totalWeight;
     }
+
 
     public Computer setNewVendor(String vendor) {
         return new Computer (vendor, name, cpu, ram, informationAccumulator, monitor, keyboard);
     }
     public Computer setNewName(String name) {
-        return new Computer (vendor, name, cpu, ram, informationAccumulator, monitor, keyboard);
+        return new Computer(vendor, name, cpu, ram, informationAccumulator, monitor, keyboard);
     }
-    public Computer setNewCpu(Cpu cpu) {
-        return new Computer (vendor, name, cpu, ram, informationAccumulator, monitor, keyboard);
+
+    public void setCpu(Cpu cpu) {
+        this.cpu = cpu;
     }
-    public Computer setNewRam(Ram ram) {
-        return new Computer (vendor, name, cpu, ram, informationAccumulator, monitor, keyboard);
+
+    public void setRam(Ram ram) {
+        this.ram = ram;
     }
-    public Computer setNewInformationAccumulator(InformationAccumulator informationAccumulator) {
-        return new Computer (vendor, name, cpu, ram, informationAccumulator, monitor, keyboard);
+
+    public void setInformationAccumulator(InformationAccumulator informationAccumulator) {
+        this.informationAccumulator = informationAccumulator;
     }
-    public Computer setNewMonitor(Monitor monitor) {
-        return new Computer (vendor, name, cpu, ram, informationAccumulator, monitor, keyboard);
+
+    public void setMonitor(Monitor monitor) {
+        this.monitor = monitor;
     }
-    public Computer setNewKeyboard(Keyboard keyboard) {
-        return new Computer (vendor, name, cpu, ram, informationAccumulator, monitor, keyboard);
+
+    public void setKeyboard(Keyboard keyboard) {
+        this.keyboard = keyboard;
+    }
+
+    public static void setTotalWeight(double totalWeight) {
+        Computer.totalWeight = totalWeight;
     }
 
     public Cpu getCpu() {
@@ -64,7 +74,7 @@ public class Computer {
     }
 
     public double getTotalWeight() {
-        return totalWeight;
+        return totalWeight * cpu.getWeight() + ram.getWeight() + informationAccumulator.getWeight() + monitor.getWeight() + keyboard.getWeight();
     }
 
     public String toString() {

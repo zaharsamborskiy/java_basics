@@ -20,6 +20,7 @@ public class Main {
                 + "\n"
         );
 
+
         computer = computer.setNewName("HyperPC");
         cpu = cpu.setNewFrequency(3.2);
         informationAccumulator = informationAccumulator.setNewinfoAccumulatorType(InfoAccumulatorType.HDD);
@@ -46,10 +47,9 @@ public class Main {
         monitor = monitor.setNewMonitorType(MonitorType.TN);
         monitor = monitor.setNewDiagonal(27.0);
         monitor = monitor.setNewWeight(50.0);
-        ram = ram.setNewType("DDR4");
-        computer = computer.setNewCpu(cpu);
-        computer = computer.setNewMonitor(monitor);
-        computer = computer.setNewRam(ram);
+        computer.setCpu(cpu.setNewFrequency(3.2));
+        computer.setRam(ram.setNewType("DDR4"));
+        computer.setInformationAccumulator(informationAccumulator.setNewWeight(100.0));
         System.out.println(
                 "Info about computer 2 : "
                         + computer2
