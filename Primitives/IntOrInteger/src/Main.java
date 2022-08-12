@@ -5,22 +5,34 @@ public class Main {
         System.out.println(container.getCount());
 
         for (char one = 'А'; one <= 'Е'; one++) {
-            System.out.println(one);
+            for (int i = one; i <= one; i++) {
+                System.out.println(one + " - " + i);
+            }
         }
         for (char two = 'Ё'; two <= 'Ё'; two++) {
-            System.out.println(two);
+            for (int i = two; i <= two; i++) {
+                System.out.println(two + " - " + i);
+            }
         }
         for (char three = 'Ж'; three <= 'Я'; three++) {
-            System.out.println(three);
+            for (int i = three; i <= three; i++) {
+                System.out.println(three + " - " + i);
+            }
         }
         for (char four = 'а'; four <= 'е'; four++) {
-            System.out.println(four);
+            for (int i = four; i <= four; i++) {
+                System.out.println(four + " - " + i);
+            }
         }
         for (char five = 'ё'; five <= 'ё'; five++) {
-            System.out.println(five);
+            for (int i = five; i <= five; i++) {
+                System.out.println(five + " - " + i);
+            }
         }
         for (char six = 'ж'; six <= 'я'; six++) {
-            System.out.println(six);
+            for (int i = six; i <= six; i++) {
+                System.out.println(six + " - " + i);
+            }
         }
 
 
